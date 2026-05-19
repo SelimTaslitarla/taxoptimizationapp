@@ -72,8 +72,8 @@ def gini_hesapla(odenen_vergi):
    y  = np.sort(net_gelir_kisi)
    cg = np.cumsum(y * n_pay) / np.sum(y * n_pay)
    cp = np.cumsum(n_pay)
-   gini = 1 - 2 * np.trapz(np.concatenate([[0], cg]),
-                               np.concatenate([[0], cp]))
+   gini = 1 - 2 * np.trapezoid(np.concatenate([[0], cg]),
+                            np.concatenate([[0], cp]))
    return gini
 
 
